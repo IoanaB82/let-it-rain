@@ -1,0 +1,152 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+}
+
+.container {
+    width: 800px;
+    height: 600px;
+}
+
+.section-item {
+   
+    
+    border-radius: 1px;
+    -webkit-box-shadow: 2px 2px 13px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 2px 13px 0px rgba(0,0,0,0.75);
+box-shadow: 2px 2px 13px 0px rgba(0,0,0,0.75);
+}
+
+.desc {
+    padding : 20px;
+}
+
+.scene {   
+    width: 100%;
+    height: 100%;
+	position: relative;
+	background: linear-gradient(#111425,#3751e0);
+	background-attachment: fixed;
+	overflow: hidden;
+}
+
+.moon
+{
+	position: absolute;
+	top: 100px;
+	left: 200px;
+	width: 100px;
+	height: 100px;
+	background: #fff;
+	border-radius: 50%;
+	transition: 0.5s;
+}
+.moon::before, .moon::after
+{
+	content: '';
+	position: absolute;
+	top: -15px;
+	left: 15px;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background: linear-gradient(#111425,#3751e0);
+	background-attachment: fixed;
+}
+
+/*.moon::after
+            {
+	content: '';
+	position: absolute;
+	top: -65px;
+	left: -50px;
+	width: 100%;
+	height: 100%;
+	border-radius: 70%;
+	background: linear-gradient(#111425,#3751e0);
+	background-attachment: fixed;
+}*/
+
+
+    .drop {
+        width: 50px;
+        height: 50px;
+        border-radius: 0 50% 50% 50%;
+        border: 1px solid #3751e0;
+        background: linear-gradient(#111425,#3751e0);
+        transform: rotate(45deg);
+        margin-top: 20px;
+        animation: rain 1s infinite; 
+      }
+@keyframes rain {
+    0% 
+        {transform: translateY(0px) rotate(45deg);
+            }
+
+    100% 
+        {transform: translateY(200px) rotate(45deg)};
+           
+}
+
+.scene drop
+{
+	position: absolute;
+	background: #fff;
+	border-radius: 50%;
+	animation: animate linear infinite;
+}
+@keyframes animate
+{
+	0%
+	{
+		opacity: 0;
+		transform: translateY(0px) rotate(45deg);
+	}
+	10%, 90%
+	{
+		opacity: 1;
+	}
+	100%
+	{
+		opacity: 0;
+		transform: translateY(250px) rotate(45deg);
+	}
+}
+
+.cloud1 {
+	position: absolute;
+	margin-top: -200px;
+	margin-left: -400px;
+    width: 100px;
+    animation: moveCloud 15s -2s infinite;
+}
+
+.cloud2 {
+	position: absolute;
+	margin-top: -80px;
+	margin-left: -400px;
+    width: 100px;
+    animation: moveCloud 17s infinite;
+}
+
+@keyframes moveCloud {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
+}
+
+.forest {
+    position: absolute;
+	margin: 0 auto;
+	bottom: 0;
+	transform: scale(1.6);
+	
+}
